@@ -1,0 +1,215 @@
+%!TEX TS-program = xelatex
+% !TeX program = xelatex
+%!TEX encoding = UTF-8 Unicode
+%----------------------------------------------------------------------------------------
+%   Доорх хэсгийг өөрчлөх шаардлагагүй
+%----------------------------------------------------------------------------------------
+\documentclass[12pt,A4]{report}
+
+\usepackage{fontspec,xltxtra,xunicode}
+\setmainfont[Ligatures=TeX]{Times New Roman}
+\setsansfont{Arial}
+
+% \usepackage[utf8x]{inputenc}
+% \usepackage[mongolian]{babel}
+%\usepackage{natbib}
+\usepackage{geometry}
+%\usepackage{fancyheadings} fancyheadings is obsolete: replaced by fancyhdr. JL
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage{afterpage}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,amsbsy}
+\usepackage{dcolumn,array}
+\usepackage{tocloft}
+\usepackage{dics}
+\usepackage{nomencl}
+\usepackage{upgreek}
+\newcommand{\argmin}{\arg\!\min}
+\usepackage{mathtools}
+\usepackage[hidelinks]{hyperref}
+
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+\usepackage{listings}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\makeatletter
+\usepackage{caption}
+\captionsetup[table]{belowskip=0.5pt}
+\captionsetup[table]{name=Хүснэгт}
+\usepackage{subfiles}
+
+\usepackage{listings}
+
+\usepackage{color}
+\definecolor{lightgray}{rgb}{.9,.9,.9}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+
+\lstdefinelanguage{TypeScript}{
+  keywords={abstract, any, as, boolean, break, case, catch, class, console, 
+    const, continue, debugger, declare, default, delete, do, else, enum, export, 
+    extends, false, finally, for, from, function, get, if, implements, import, in, 
+    infer, instanceof, interface, keyof, let, module, namespace, never, new, null, 
+    number, object, package, private, protected, public, readonly, require, return, 
+    set, static, string, super, switch, symbol, this, throw, true, try, type, typeof, 
+    undefined, unique, unknown, var, void, while, with, yield, async, await},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  morestring=[b]',
+  morestring=[b]"
+}
+
+\lstset{
+   language=TypeScript,
+   backgroundcolor=\color{lightgray},
+   extendedchars=true,
+   basicstyle=\footnotesize\ttfamily,
+   showstringspaces=false,
+   showspaces=false,
+   numbers=left,
+   numberstyle=\footnotesize,
+   numbersep=9pt,
+   tabsize=2,
+   breaklines=true,
+   showtabs=false,
+   captionpos=b
+}
+\lstdefinelanguage{yaml}{
+  keywords={true,false,null,y,n},
+  keywordstyle=\color{darkgray}\bfseries,
+  basicstyle=\ttfamily\footnotesize,
+  sensitive=false,
+  comment=[l]{\#},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{blue}\ttfamily,
+  morestring=[b]',
+  morestring=[b]",
+  breaklines=true,
+  breakatwhitespace=true
+}
+\renewcommand{\lstlistingname}{Код}
+\renewcommand{\lstlistlistingname}{\lstlistingname ын жагсаалт}
+
+\usepackage{color}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.99,0.99,0.99}
+ 
+\lstdefinestyle{mystyle}{
+    basicstyle=\ttfamily\small,
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    %basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=false,                 
+    numbers=left,                    
+    numbersep=10pt,                  
+    showspaces=false,                
+    showstringspaces=true,
+    showtabs=false,                  
+    tabsize=2
+}
+ 
+\lstset{style=mystyle, label=DescriptiveLabel} 
+
+\let\oldabs\abs
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+\makenomenclature
+\begin{document}
+
+
+%----------------------------------------------------------------------------------------
+%   Өөрийн мэдээллээ оруулах хэсэг
+%----------------------------------------------------------------------------------------
+
+% Дипломийн ажлын сэдэв
+\title{Бизнесийн байгууллагын ажилчдын гүйцэтгэлийг үнэлэх систем}
+% Дипломын ажлын англи нэр
+\titleEng{Employee performance evaluation system for business organizations.}
+% Өөрийн овог нэрийг бүтнээр нь бичнэ
+\author{Баянжаргалын Энх-Амгалан}
+% Өөрийн овгийн эхний үсэг нэрээ бичнэ
+\authorShort{Б. Энх-Амгалан}
+% Удирдагчийн зэрэг цол овгийн эхний үсэг нэр
+\supervisor{Б. Энхтуул}
+% Хамтарсан удирдагчийн зэрэг цол овгийн эхний үсэг нэр
+% \cosupervisor{Н. Оюун-Эрдэнэ}
+
+% СиСи дугаар 
+\sisiId{21B1NUM0344}
+% Их сургуулийн нэр
+\university{МОНГОЛ УЛСЫН ИХ СУРГУУЛЬ}
+% Бүрэлдэхүүн сургуулийн нэр
+\faculty{МЭДЭЭЛЛИЙН ТЕХНОЛОГИ, ЭЛЕКТРОНИКИЙН СУРГУУЛЬ}
+% Тэнхимийн нэр
+\department{МЭДЭЭЛЭЛ, КОМПЬЮТЕРЫН УХААНЫ ТЭНХИМ}
+% Зэргийн нэр
+\degreeName{Бакалаврын судалгааны ажил}
+% Суралцаж буй хөтөлбөрийн нэр
+\programeName{Мэдээллийн технологи (D061303)}
+% Хэвлэгдсэн газар
+\cityName{Улаанбаатар}
+% Хэвлэгдсэн огноо
+\gradyear{2025 оны 2 сар}
+
+
+%----------------------------------------------------------------------------------------
+%   Доорх хэсгийг өөрчлөх шаардлагагүй
+%----------------------------------------------------------------------------------------
+\include{src/main-pre}
+
+% Удиртгалыг оруулж ирэх ба abstract.tex файлд удиртгалаа бичнэ
+\include{src/abstract}
+\addcontentsline{toc}{part}{БҮЛГҮҮД}
+
+%----------------------------------------------------------------------------------------
+%   Дипломын үндсэн хэсэг эндээс эхэлнэ
+%----------------------------------------------------------------------------------------
+% Шинэ бүлэг
+\subfile{src/chapters/chapter1}
+\include{src/chapters/chapter2}
+\include{src/chapters/chapter3}
+
+
+
+% \chapter{Тайлан боловсруулах зөвлөмж}
+% \subfile{writing.tex}
+
+
+%----------------------------------------------------------------------------------------
+%   Дүгнэлт эндээс эхэлнэ
+%----------------------------------------------------------------------------------------
+\conclusion{Дүгнэлт}
+Энэхүү судалгааны ажлаар дэлхий нийтэд ашиглагдаж буй криптографын зарим алгоритмуудыг судалж хэрэгжүүлсэн билээ. Энэхүү судалж суралцсан мэдлэгээ ашиглан практикт олон улсын стандартад нийцсэн үүлэн технологит суурилсан тоон гарын үсгийн системийн бүтээхийг зорилоо. Үр дүнд нь хамгийн орчин үеийн шинэлэг үүлэн технологиудтай танилцсан ба, бүтээгдэхүүний шаардлагыг гаргаж эх кодыг үүсгэхээс эхлээд эцсийн хэрэглэгчид хүрэх, чанарын шаардлагыг хангаж ачаалал даахуйц системийг бүтээлээ.
+
+Энэхүү систем нь үүлэн технологит суурилсан гэдгээрээ Монгол улсад анхдагч болж байгаа юм. Энэ төрлийн систем нь нууцлалыг маш өндөр түвшинд хангаж байх нь хамгийн чухал байсан ба нийт хөгжүүлэлтийн ажлын дийлэнх цаг нь үүлэн технологийг судлахад зарцуулагдсан билээ. Үүнээс гадна, хэрэглэгчийн утсанд цагаас хамааран өөрчлөгдөх нууц үг тохируулж, гарын үсгийг нь тухайн хэрэглэгчийн нууц үгээр дахин шифрлэж хоёроос гурван шатны хамгаалалтыг нэмсэн юм. Олон улсын стандартад нийцсэн хэлбэрээр бичиг баримтын баталгаажуулах нь нэн төвөгтэй байсан ба нээлттэй эхийн PDF дээр л зөвхөн бүрэн утгаараа ажиллаж байгаа юм. Энэ нь PDF файл цаанаа гарын үсэг зурах хэсэгтэй байдагтай холбоотой. 
+Мөн түүнчлэн систем дээрээ сонгодог крифтографын алгоритмуудыг уншсан судалгаанаасаа ямар нэгэн сан ашиглахгүйгээр хэрэгжүүлэхийг оролдсон бөгөөд, энэ нь нэн төвөгтэй ажил байсан. Иймд дугуйг дахин зохион бүтээх шаардлагагүй гэдэгчлэн олон жилийн туршид шалгагдаж, стандарт хангасан сан, кодыг ашиглан хөгжүүлэх нь зүйтэй.
+Цаашлаад блокчейн технологийг ашиглан бүр ч илүү найдвартай, нийтэд нээлтэй систем болох боломжтой гэж харж байна.
+%----------------------------------------------------------------------------------------
+%   Дипломын номзүй, хавсралтын хэсэг эндээс эхэлнэ
+%----------------------------------------------------------------------------------------
+\include{src/bibliography}
+
+
+%----------------------------------------------------------------------------------------
+%   Хавсралтууд эндээс эхэлнэ
+%----------------------------------------------------------------------------------------
+\include{src/appendix}
+
+\end{document}
