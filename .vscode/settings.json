@@ -1,58 +1,59 @@
 {
-	"editor.cursorBlinking": "solid",
-	"editor.wordWrap": "on",
-	"editor.wordWrapColumn": 80,
-	"editor.wrappingIndent": "same",
-	"editor.detectIndentation": false,
-	"editor.insertSpaces": false,
-	"editor.tabSize": 2,
-	"editor.defaultFormatter": "James-Yu.latex-workshop",
-	"telemetry.enableCrashReporter": false,
-	"telemetry.enableTelemetry": false,
-	"latex-workshop.message.badbox.show": false,
-	"files.exclude": {
-		"**/.git": true,
-		"**/.svn": true,
-		"**/.hg": true,
-		"**/CVS": true,
-		"**/.DS_Store": true,
-		"*.aux": true,
-		"*/*.aux": true,
-		"*.lof": true,
-		"*.log": true,
-		"*.lol": true,
-		"*.lot": true,
-		"*.fls": true,
-		"*.fdb_latexmk": true,
-		"*.nlo": true,
-		"*.out": true,
-		"*.toc": true,
-		"*.fmt": true,
-		"*.fot": true,
-		"*.cb": true,
-		"*.cb2": true,
-		".*.lb": true,
-		"*.*.gz": true,
-	},
-	"latex-workshop.latex.toolchain": [
-		{
-			"command": "/Library/TeX/texbin/xelatex",
-			"args": ["-synctex=1", "-interaction=nonstopmode", "%DOC%"]
-		},
-	],
-	"latex-workshop.linting.chktex.exec.args": [
-		"-wall",
-		"-n22",
-		"-n30",
-		"-e16",
-		"-q",
-		"-n3",
-		"-n1",
-		"-n21",
-		"-n19",
-		"-n22"
-	],
-	"latex-workshop.linter.warning.ignore": [
-		"DuplicateLabels"
-	]
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk",
+            "command": "/usr/local/texlive/2025/bin/universal-darwin/latexmk",
+            "args": [
+                "-xelatex",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-outdir=%DIR%/out",
+                "-f",
+                "-g",
+                "%DOC%"
+            ],
+            "env": {}
+        }
+    ],
+    "latex-workshop.latex.outDir": "%DIR%/out",
+    "latex-workshop.latex.rootFile": "%DIR%/main.tex",
+    "latex-workshop.latex.autoBuild.run": "onFileChange",
+    "latex-workshop.latex.autoBuild.onlyRoot": true,
+    "latex-workshop.latex.clean.fileTypes": [
+        "*.aux",
+        "*.bbl",
+        "*.blg",
+        "*.idx",
+        "*.ind",
+        "*.lof",
+        "*.lot",
+        "*.out",
+        "*.toc",
+        "*.acn",
+        "*.acr",
+        "*.alg",
+        "*.glg",
+        "*.glo",
+        "*.gls",
+        "*.ist",
+        "*.fls",
+        "*.log",
+        "*.fdb_latexmk",
+        "*.synctex.gz",
+        "*.xdv"
+    ],
+    "latex-workshop.latex.clean.subfolder.enabled": true,
+    "latex-workshop.message.error.show": true,
+    "latex-workshop.message.warning.show": true,
+    "latex-workshop.latex.autoClean.run": "onBuilt",
+    "latex-workshop.view.pdf.viewer": "external",
+    "latex-workshop.view.pdf.external.viewer.command": "open",
+    "latex-workshop.view.pdf.external.viewer.args": ["%PDF%"],
+    "terminal.integrated.env.osx": {
+        "PATH": "/usr/local/texlive/2025/bin/universal-darwin:/Users/enkh-amgalanbayanjargal/.bun/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/usr/local/share/dotnet:~/.dotnet/tools:/usr/local/go/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Postgres.app/Contents/Versions/latest/bin:/Users/enkh-amgalanbayanjargal/Applications/iTerm.app/Contents/Resources/utilities"
+    },
+    "editor.formatOnSave": false,
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000
 }
